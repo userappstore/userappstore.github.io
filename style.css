@@ -1,0 +1,12 @@
+html { font-family: Arial, Helvetica, sans-serif; font-size: 100%; color: #000 }
+body { background-color: #FFF; padding: 0; margin: 0 }
+header { background-color: #036; color: #FFF; padding: 2rem }
+header span { display: inline-block; margin-top: 0.5rem; font-size: 1.4rem }
+section { width: 24%; display: inline-block; vertical-align: top; max-width: 50rem; min-width: 25rem }
+h1 { margin: 0; padding: 0 }
+h2 { margin: 0; font-size: 1.2rem; padding: 1rem }
+a { font-size: 1rem }
+p { padding: 0 1rem }
+p, ul { margin-bottom: 1.8rem }
+li { line-height: 2rem }
+li ul { margin: 0; padding-left: 0.5rem }
