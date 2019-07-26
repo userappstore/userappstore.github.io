@@ -1,12 +1,83 @@
-html { font-family: Arial, Helvetica, sans-serif; font-size: 100%; color: #000 }
+html { font-family: Arial, Helvetica, sans-serif; font-size: 90%; color: #000; }
 body { background-color: #FFF; padding: 0; margin: 0 }
-header { background-color: #036; color: #FFF; padding: 2rem }
-header span { display: inline-block; margin-top: 0.5rem; font-size: 1.4rem }
-section { width: 24%; display: inline-block; vertical-align: top; max-width: 50rem; min-width: 25rem }
-h1 { margin: 0; padding: 0 }
+header { background-color: #030; color: #FFF; width: 100% }
+header h1 { padding: 1rem 1rem 0.5rem 1rem }
+header span { display: inline-block; padding: 0 0 1rem 1rem; font-size: 1.4rem }
+section { width: 15%; display: inline-block; vertical-align: top; margin-right: 1% }
+section:last-of-type { margin-right: 0 }
+h1 { margin: 0; padding: 0; padding: 1rem 0 0 1rem }
 h2 { margin: 0; font-size: 1.2rem; padding: 1rem }
-a { font-size: 1rem }
+h3 { margin: 0; font-size: 1.2rem; padding: 0 0 0 1rem }
 p { padding: 0 1rem }
 p, ul { margin-bottom: 1.8rem }
 li { line-height: 2rem }
 li ul { margin: 0; padding-left: 0.5rem }
+a { color: #010; text-decoration: none; font-size: 1.2rem }
+a:hover { color: #060 }
+/* index page */
+p.note { font-size: 1.2rem; max-width: 36rem; line-height: 1.6rem; margin-top: 0.5rem }
+menu.index { display: none; padding-left: 1rem }
+menu.index li,
+menu.indexes li { list-style-type: none }
+menu.index a,
+menu.indexes a { display: inline-block }
+menu.indexes { padding: 0.5rem 0 0 1rem; margin: 0; }
+menu.indexes a { color: #010 }
+a.skip { display: none; font-size: 1rem; color: #010 }
+/* content */
+div.content { padding: 2rem; font-size: 1.2rem }
+div.content pre,
+div.content code,
+div.content a,
+div.content li,
+div.content th,
+div.content td { font-size: inherit; line-height: 1.6rem }
+div.content h1 { font-size: 2rem; padding-left: 0; font-weight: normal }
+div.content h2,
+div.content p { padding: 0; margin-bottom: 1.2rem; max-width: 90rem }
+div.content p img { width: 100%; max-width: 90rem }
+div.content p code { color: #900 }
+div.content p a { text-decoration: underline }
+div.content li { line-height: 1.4rem }
+div.content pre { font-size: 1rem; display: inline-block; background-color: #DDD; border: 0.5rem solid #DDD; max-width: 100%; overflow: auto }
+div.content td pre { Background-color: transparent; border: none }
+section.full { width: 74%; margin-right: 0 }
+section.side { max-width: 40rem }
+section.navigation { font-size: 1.2rem }
+section.navigation h2 { padding: 1rem 0 0 1rem }
+section.navigation li ul { padding-left: 1rem }
+section.navigation p { margin-bottom: 0; margin-right: 2rem }
+ul.screenshots { list-style-type: none; margin: 0 0 2rem 0; padding: 0; max-width: 120rem }
+ul.screenshots li { padding: 0.25rem; margin: 0 0.5rem 0.5rem 0; border: 1px solid #CCC; max-width: 24rem; text-align: center; display: inline-block }
+ul.screenshots img { width: 100% }
+pre.example { max-height: 24rem; overflow: scroll; padding: 0.1rem; background-color: #DDD }
+a.home { font-weight: bold; margin: 1rem; display: inline-block }
+table { border-collapse: collapse; margin-bottom: 1rem; width: 100%; max-width: 90rem }
+table.api { font-family: monospace; margin: 1rem 0 }
+table.api td { vertical-align: top }
+table.api span { color: #666 }
+table.api .method { color: #FFF; border-radius: 0.25rem; font-size: 0.9rem; line-height: 0.9rem; padding: 0.25rem }
+table.api .get { background-color: darkgreen }
+table.api .post { background-color: darkblue }
+table.api .patch { background-color: purple }
+table.api .delete { background-color: red }
+th { background-color: #333; color: #FFF; text-align: left }
+th,
+td { padding: 0.5rem 1rem 0.5rem 0.5rem; border: 1px solid #333 }
+td { background-color: #FFF }
+th.small { width: 6rem }
+th.large { width: 24rem }
+tr.alt td { background-color: #DDD }
+pre { margin: 0 0 2rem 2rem }
+td pre { margin: 0; overflow: auto !important }
+
+@media (min-width: 1920px) {
+  .skip { display: none }
+  div.content .skip { display: inline-block }
+}
+@media (max-width: 1280px) {
+  section { width: 100% !important; max-width: none; min-width: none }
+  menu.index,
+  .skip { display: inline-block !important }
+  ul.screenshots li { width: 100%; max-width: none }
+}
