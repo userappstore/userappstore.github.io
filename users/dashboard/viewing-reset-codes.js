@@ -1,0 +1,22 @@
+const Screenshots = require('../../screenshots.js')
+
+module.exports = async (device) => {
+  await Screenshots.createUser(device, 'owner')
+  const user = await Screenshots.createUser(device)
+  await user.hover('Account')
+  await user.click('My account')
+  await user.click('Reset codes')
+  await user.click('Create code', true)
+  await user.click('Save code', true)
+  await user.click('Home')
+  await user.hover('Account')
+  await user.hover('My account')
+  await user.screenshot('Click "My account"')
+  await user.hover('Account')
+  await user.click('My account')
+  await user.hover('Reset codes')
+  await user.screenshot('Click "Reset codes"')
+  await user.hover('Reset codes')
+  await user.click('Reset codes')
+  await user.screenshot('Viewing reset codes')
+}

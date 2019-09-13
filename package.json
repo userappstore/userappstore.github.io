@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "generate": "rm -rf \"$STORAGE_PATH\" && mkdir -p \"$STORAGE_PATH\" && node \"$x\"; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/userdashboard/userdashboard.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/userdashboard/userdashboard.github.io/issues"
+  },
+  "homepage": "https://github.com/userdashboard/userdashboard.github.io#readme",
+  "dependencies": {
+    "puppeteer": "^1.19.0",
+    "server-html": "^9.0.0"
+  }
+}

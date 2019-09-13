@@ -1,263 +1,64 @@
 <html>
   <head>
-    <title>UserAppStore documentation home</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>UserAppStore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <style>
+      html { width: 100%; height: 100%; padding: 0; margin: 0 }
+      body { width: 100%; height: 100%; padding: 0; margin: 0; background: linear-gradient(#369, #000); font-family: sans-serif;  overflow: hidden }
+      /* the line-drawing montage is designed by rawpixel.com distributed via freepik.com */
+      .dashboard { position: absolute; top: 5%; left: 5%; border-radius: 0.5rem; color: #036; width: 90%; height: 90%; background: #036 url(/creative-diagram.png) no-repeat center center; background-size: auto 100%; background: radial-gradient(#369, #000); overflow: hidden }
+      .dashboard .header { position: absolute; z-index: 2; border-top-right-radius: 0.5rem; border-top-left-radius: 0.5rem; height: 3rem; line-height: 3rem; color: inherit; width: 100%; background-color: #036 }
+      .dashboard .header h2 { display: inline-block; text-indent: 1rem; font-size: 1.5rem; font-weight: normal; margin: 0; color: rgba(255, 255, 255, 0.5) }
+      .dashboard .header img { width: 1.5rem; height: 1.5rem; margin-top: 0.75rem; display: block; float: right; margin-left: 0.5rem; opacity: 0.75 }
+      .dashboard .header .menus { float: right }
+      .dashboard .header .menu { height: 3rem; float: right; color: rgba(255, 255, 255, 0.5); line-height: 3rem; font-size: 0.9rem; margin-right: 1rem }
+      .dashboard .header .menu span { display: inline-block; height: 3rem; line-height: 3rem }
+      .dashboard .navigation { width: 100%; position: absolute; z-index: 2; top: 3rem; height: 2rem; line-height: 2rem; background-color: #FFF }
+      .dashboard .navigation a { text-decoration: none; color: #369; font-size: 0.8rem; margin-left: 1rem; line-height: 2rem }
+      .dashboard .feature { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) }
+      @media (max-width: 960px) {
+        .header h2 { font-size: 1.2rem !important }
+        .dashboard .feature { height: 100%; width: auto }
+      }
+      @media (max-width: 650px) {
+        .dashboard { top: 2%; left: 2%; width: 96%; height: 96% }
+        .header .menu { font-size: 0.8rem !important }
+        .header .menu span { display: none !important }
+        .navigation a { font-size: 0.75rem !important }
+        /* .navigation a span { display: none !important } */
+        .dashboard .navigation a { margin-left: 0.75rem !important }
+      }
+      @media (max-width: 640px) {
+        .header h2 { font-size: 0.7rem !important; text-indent: 0.3rem }
+        .header .menu { font-size: 0.6rem !important }
+        .navigation a { font-size: 0.6rem !important; margin-left: 0.4rem !important }
+        .navigation a:first-of-type { margin-left: 0.4rem !important }
+      }
+    </style>
   </head>
   <body>
-    <a name="top"></a>
-    <header>
-      <h1>UserAppStore</h1>
-      <span>Documentation for app store users, developers, administrators and platform owners</span>
-    </header>    
-    <section>
-      <menu class="index">
-        <li><a class="skip" href="#users">Skip to account management</a></li>
-        <li><a class="skip" href="#administrators">Skip to administrator notes</a></li>
-        <li><a class="skip" href="#developers">Skip to developer notes</a></li>
-        <li><a class="skip" href="#apis">Skip to API reference</a></li>
-        <li><a class="skip" href="#repositories">Skip to Github links</a></li>
-        <li><a class="skip" href="#packages">Skip to NPM packages</a></li>
-      </menu>
-      <a name="users"></a>
-      <h1>Users</h1>
-      <p class="note">How to use projects, collections, subscriptions and more.</p>
-      <ul>
-        <li><a href="#">Viewing installs</a></li>
-        <li><a href="#">Installing from app store</a></li>
-        <li><a href="#">Installing from app store for organization</a></li>
-        <li><a href="#">Installing via an organization</a></li>
-        <li><a href="#">Installing shared projects</a></li>
-        <li><a href="#">Importing application servers</a></li>
-        <li><a href="#">Importing other websites</a></li>
-        <li><a href="#">Updating installs</a></li>
-        <li><a href="#">Deleting installs</a></li>
-        <li><a href="#">Viewing uninstalls</a></li>
-        <li><a href="#">Creating collections</a></li>
-        <li><a href="#">Updating collections</a></li>
-        <li><a href="#">Deleting collections</a></li>
-        <li><a href="#">Viewing collections</a></li>
-        <li><a href="#">Adding installs to collections</a></li>
-        <li><a href="#">Removing installs from collections</a></li>
-      </ul>
-      <h3>Accounts</h3>
-      <p class="note">How to manage your account, sessions and reset codes.</p>
-      <ul>
-        <li><a href="/users/dashboard/changing-your-username.html">Changing your username</a></li>
-        <li><a href="/users/dashboard/changing-your-password.html">Changing your password</a></li>
-        <li><a href="/users/dashboard/viewing-sessions.html">Viewing sessions</a></li>
-        <li><a href="/users/dashboard/end-specific-session.html">End specific session</a></li>
-        <li><a href="/users/dashboard/end-all-sessions.html">Ending all sessions</a></li>
-        <li><a href="/users/dashboard/viewing-reset-codes.html">Viewing reset codes</a></li>
-        <li><a href="/users/dashboard/creating-reset-codes.html">Creating reset codes</a></li>
-        <li><a href="/users/dashboard/deleting-reset-codes.html">Deleting reset codes</a></li>
-        <li><a href="/users/dashboard/viewing-profiles.html">Viewing profiles</a></li>
-        <li><a href="/users/dashboard/creating-profiles.html">Creating profiles</a></li>
-        <li><a href="/users/dashboard/setting-default-profile.html">Setting default profile</a></li>
-        <li><a href="/users/dashboard/updating-profiles.html">Updating profiles</a></li>
-        <li><a href="/users/dashboard/deleting-profiles.html">Deleting profiles</a></li>            
-        <li><a href="/users/dashboard/deleting-your-account.html">Deleting your account</a></li>
-        <li><a href="/users/dashboard/restoring-your-account.html">Restoring your account</a></li>
-        <li><a href="/users/dashboard/resetting-account-password.html">Resetting account password</a></li>
-      </ul>
-      <h3>Organizations</h3>
-      <p class="note">Create groups of users to install apps together and co-administrate projects and application servers.</p>
-      <ul>
-        <li><a href="/users/organizations/viewing-organizations.html">Viewing organizations</a></li>
-        <li><a href="/users/organizations/creating-organizations.html">Creating organizations</a></li>
-        <li><a href="/users/organizations/deleting-organizations.html">Deleting organizations</a></li>
-        <li><a href="/users/organizations/viewing-invitations.html">Viewing invitations</a></li>
-        <li><a href="/users/organizations/creating-invitations.html">Creating invitations</a></li>
-        <li><a href="/users/organizations/accepting-invitations.html">Accepting invitations</a></li>
-        <li><a href="/users/organizations/deleting-invitations.html">Deleting invitations</a></li>
-        <li><a href="/users/organizations/transferring-ownership.html">Transferring ownership</a></li>
-        <li><a href="/users/organizations/viewing-memberships.html">Viewing memberships</a></li>
-        <li><a href="/users/organizations/revoking-memberships.html">Revoking memberships</a></li>
-        <li><a href="/users/organizations/leaving-organizations.html">Leaving organizations</a></li>
-        <li><a href="/users/organizations/updating-memberships.html">Updating memberships</a></li>
-        <li><a href="/users/organizations/updating-organizations.html">Updating organizations</a></li>
-      </ul>
-      <h3>Connect registrations</h3>
-      <p class="note">Completed <a href="https://stripe.com/connect">Stripe Connect</a> registrations are required to publish projects and application servers on the app store.</p>
-      <ul>
-        <li><a href="/users/stripe-connect/viewing-registrations.html">Viewing registrations</a></li>
-        <li><a href="/users/stripe-connect/creating-individual-registrations.html">Creating individual registrations</a></li>
-        <li><a href="/users/stripe-connect/creating-company-registrations.html">Creating company registrations</a></li>
-        <li><a href="/users/stripe-connect/deleting-registrations.html">Deleting registrations</a></li>
-        <li><a href="/users/stripe-connect/adding-individual-information.html">Adding individual information</a></li>
-        <li><a href="/users/stripe-connect/adding-company-information.html">Adding company information</a></li>
-        <li><a href="/users/stripe-connect/adding-payment-information.html">Adding payment information</a></li>
-        <li><a href="/users/stripe-connect/viewing-company-owners.html">Viewing company owners</a></li>
-        <li><a href="/users/stripe-connect/adding-company-owners.html">Adding company owners</a></li>
-        <li><a href="/users/stripe-connect/deleting-company-owners.html">Deleting company owners</a></li>
-        <li><a href="/users/stripe-connect/updating-company-owners.html">Updating company owners</a></li>
-        <li><a href="/users/stripe-connect/submitting-company-owners.html">Submitting company owners</a></li>
-        <li><a href="/users/stripe-connect/submitting-registration.html">Submitting registrations</a></li>
-        <li><a href="/users/stripe-connect/updating-banking-information.html">Updating banking information</a></li>
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
-    </section>
-    <section>
-      <a name="users"></a>
-      <h1>App development</h1>
-      <p class="note">How to code single page apps and publish your application servers.</p>
-      <ul>
-        <li><a href="#">Creating compatible web paplications</a></li>
-        <li><a href="#">Making existing web applications compatible</a></li>
-        <li><a href="#">Publishing on the app store</a></li>
-        <li><a href="#">Viewing projects</a></li>
-        <li><a href="#">Creating projects</a></li>
-        <li><a href="#">Viewing projects</a></li>
-        <li><a href="#">Using the project IDE</a></li>
-        <li><a href="#">Sharing projects</a></li>
-        <li><a href="#">Sharing projects for organization</a></li>
-        <li><a href="#">Unsharing projects</a></li>
-        <li><a href="#">Deleting projects</a></li>
-        <li><a href="#">Copying shared projects</a></li>
-        <li><a href="#">Downloading projects</a></li>
-        <li><a href="#">Claiming application servers</a></li>
-        <li><a href="#">Claiming application servers for organization</a></li>
-        <li><a href="#">Viewing application servers</li>
-        <li><a href="#">Deleting application servers</a></li>
-      </ul>
-      <h3>Integration walkthroughs</h3>
-      <p class="note">These walkthroughs start with an open source application and make it free to import or installed from the app store.</p>
-      <ul>
-        <li><a href="/integrations/hastebin-free-saas.html">Making Hastebin a free SaaS</a></li>
-        <li><a href="/integrations/hastebin-subscription-saas.html">Making Hastebin a subscription SaaS</a></li>
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
-    <section>
-      <a name="users"></a>
-      <h1>App administrators</h1>
-      <p class="note">How to administrate project and application server users, organizations and subscriptions.</p>
-      <h3>Organizations</h3>
-      <ul>
-        <li><a href="/administrators/organizations/viewing-organizations.html">Viewing organizations</a></li>
-        <li><a href="/administrators/organizations/viewing-memberships.html">Viewing memberships</a></li>
-        <li><a href="/administrators/organizations/viewing-invitations.html">Viewing invitations</a></li>
-      </ul>
-      <h3>Subscriptions</h3>
-      <ul>
-        <li><a href="/administrators/stripe-subscriptions/viewing-subscriptions.html">Viewing subscriptions</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-at-period-end.html">Deleting subscription at end of billing period</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-with-credit.html">Deleting subscription with credit</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-with-refund.html">Deleting subscription with refund</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-customers.html">Viewing customers</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-credits.html">Viewing credits</a></li>
-        <li><a href="/administrators/stripe-subscriptions/assigning-credits.html">Assigning credit</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-invoices.html">Viewing invoices</a></li>
-        <li><a href="/administrators/stripe-subscriptions/refunding-invoices.html">Refunding invoices</a></li>
-        <li><a href="/administrators/stripe-subscriptions/forgiving-invoices.html">Forgiving invoices</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-charges.html">Viewing charges</a></li>
-        <li><a href="/administrators/stripe-subscriptions/flagging-fraudulent-charges.html">Flagging fraudulent charges</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-refunds.html">Viewing refunds</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-refund-requests.html">Viewing refund requests</a></li>
-        <li><a href="/administrators/stripe-subscriptions/accepting-refund-requests.html">Accepting refund requests</a></li>
-        <li><a href="/administrators/stripe-subscriptions/denying-refund-requests.html">Denying refund requests</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-products.html">Viewing products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/creating-products.html">Creating products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/publishing-products.html">Publishing products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/unpublishing-products.html">Unpublishing products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/updating-products.html">Updating products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-products.html">Deleting products</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-plans.html">Viewing plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/creating-plans.html">Creating plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/publishing-plans.html">Publishing plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/unpublishing-plans.html">Unpublishing plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/updating-plans.html">Updating plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-plans.html">Deleting plans</a></li>
-        <li><a href="/administrators/stripe-subscriptions/viewing-coupons.html">Viewing coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/creating-coupons.html">Creating coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/publishing-coupons.html">Publishing coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/unpublishing-coupons.html">Unpublishing coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/updating-coupons.html">Updating coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/applying-coupons-to-customers.html">Applying coupons to customers</a></li>
-        <li><a href="/administrators/stripe-subscriptions/applying-coupons-to-subscriptions.html">Applying coupons to subscriptions</a></li>
-        <li><a href="/administrators/stripe-subscriptions/revoking-customer-coupon.html">Revoking customer coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/revoking-subscription-coupon.html">Revoking subscription coupons</a></li>
-        <li><a href="/administrators/stripe-subscriptions/deleting-coupons.html">Deleting coupons</a></li>
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
-    <section>
-      <a name="administrators"></a>
-      <h1>Platform administrators</h1>
-      <p class="note">How to manage your own app store's users, projects, application servers, organizations and Connect registrations.</p>
-      <ul>
-        <li><a href="#">Viewing installs</a></li>
-        <li><a href="#">Viewing uninstalls</a></li>
-        <li><a href="#">Viewing projects</a></li>
-        <li><a href="#">Viewing collections</a></li>
-      </ul>
-      <h2>Accounts</h2>
-      <ul>
-        <li><a href="/administrators/dashboard/viewing-accounts.html">Viewing accounts</a></li>
-        <li><a href="/administrators/dashboard/scheduling-deleting-accounts.html">Schedule deleting accounts</a></li>
-        <li><a href="/administrators/dashboard/maintaining-delete-schedule.html">Maintaining delete schedule</a></li>
-        <li><a href="/administrators/dashboard/deleting-accounts.html">Deleting accounts</a></li>
-        <li><a href="/administrators/dashboard/resetting-session-keys.html">Resetting account session</a></li>
-        <li><a href="/administrators/dashboard/viewing-administrators.html">Viewing administrators</a></li>
-        <li><a href="/administrators/dashboard/adding-administrators.html">Adding administrators</a></li>
-        <li><a href="/administrators/dashboard/revoking-administrators.html">Revoking administrators</a></li>
-        <li><a href="/administrators/dashboard/transferring-ownership.html">Transferring ownership</a></li>
-        <li><a href="/administrators/dashboard/viewing-sessions.html">Viewing sessions</a></li>
-        <li><a href="/administrators/dashboard/viewing-profiles.html">Viewing profiles</a></li>
-        <li><a href="/administrators/dashboard/viewing-reset-codes.html">Viewing reset codes</a></li>
-        <li><a href="/administrators/dashboard/creating-reset-codes.html">Creating reset codes</a></li>
-      </ul>
-      <h2>Organizations</h2>
-      <ul>
-        <li><a href="/administrators/organizations/viewing-organizations.html">Viewing organizations</a></li>
-        <li><a href="/administrators/organizations/viewing-memberships.html">Viewing memberships</a></li>
-        <li><a href="/administrators/organizations/viewing-invitations.html">Viewing invitations</a></li>
-      </ul>
-      <h2>Stripe Connect registrations</h2>
-      <ul>
-        <li><a href="/administrators/stripe-connect/viewing-stripe-accounts.html">Viewing Stripe accounts</a></li>
-        <li><a href="/administrators/stripe-connect/rejecting-stripe-accounts.html">Rejecting Stripe accounts</a></li>
-        <li><a href="/administrators/stripe-connect/deleting-stripe-accounts.html">Deleting Stripe accounts</a></li>
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
-    <section>
-      <a name="developers"></a>
-      <h1>Platform development</h1>
-      <p class="note">Learn how the app store software operates and and how to configure and scale your servers in production.</p>
-      <ul>
-        <li><a href="/developers/">Developer documentation home</a></li>
-        <li><a href="/developers/creating-dashboard-servers.html">Deploying the app store software</a></li>
-        <li><a href="/developers/dashboard-environment-variables.html">App store environment variables</a></li>
-        <li><a href="/developers/scaling-dashboard-servers.html">Scaling app store servers</a></li>
-        <li><a href="/developers/dashboard-production-recommendations.html">App store production recommendations</a></li>
-      </ul>
-      <a name="apis"></a>
-      <h3>App store &amp; Dashboard APIs</h3>
-      <p class="note">API references for accessing app store .</p>
-      <ul>
-        <li><a href="/apis/app-store-http-api.html">App store HTTP API</a> / <a href="/apis/app-store-nodejs-api.html">NodeJS</a></li>
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
-    <section>
-      <a name="repositories"></a>
-      <h1>Contributions</h1>
-      <p class="note">Help fix issues and post about new ones to improve Dashboard, the official modules and this documentation.</p>
-      <h2>Github repositories</h2>
-      <ul>
-        <li><a href="https://github.com/userappstore/app-store-application-server">App store application server</a></li>
-        <li><a href="https://github.com/userappstore/app-store-dashboard-server">App store dashboard server</a></li>
-        <li><a href="https://github.com/userappstore/userappstore.github.io">Documentation site</a></li>
-      </ul>
-      <a name="packages"></a>
-      <h2>NPM packages</h2>
-      <ul>
-        <li><a href="https://npmjs.com/package/@userappstore/app-store-application-server">@userappstore/app-store-application-server</a></li>
-        <li><a href="https://npmjs.com/package/@userappstore/app-store-dashboard-server">@userappstore/app-store-dashboard-server</a></li>
-
-      </ul>
-      <p><a class="skip" href="#top">Top of page</a></p>
-    </section>
+    <div class="dashboard">
+      <section class="header">
+        <h2>Dashboard</h2>
+        <div class="menus">
+          <div class="menu">
+            <img src="/account.svg" />
+          </div>
+          <div class="menu">
+            <img src="/administrator.svg" />
+          </div>
+        </div>
+      </section>
+      <section class="navigation">
+        <nav>
+          <a href="/home.html">Developers</a>
+          <a href="/users/home.html">User manual</a>
+          <a href="/administrators/home.html">Administrator manual</a>
+          <a href="https://github.com/userdashboard/dashboard">Source code</a>
+        </nav>
+      </section>
+      <img class="feature" src="/creative-diagram.png" />
+    </div>
   </body>
 </html>

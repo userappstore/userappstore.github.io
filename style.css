@@ -1,19 +1,21 @@
 html { font-family: Arial, Helvetica, sans-serif; font-size: 90%; color: #000; }
 body { background-color: #FFF; padding: 0; margin: 0 }
-header { background-color: #030; color: #FFF; width: 100% }
+header { background-color: #979; color: #FFF; width: 100% }
 header h1 { padding: 1rem 1rem 0.5rem 1rem }
 header span { display: inline-block; padding: 0 0 1rem 1rem; font-size: 1.4rem }
-section { width: 15%; display: inline-block; vertical-align: top; margin-right: 1% }
+section { width: 24%; display: inline-block; vertical-align: top; margin-right: 1% }
 section:last-of-type { margin-right: 0 }
 h1 { margin: 0; padding: 0; padding: 1rem 0 0 1rem }
 h2 { margin: 0; font-size: 1.2rem; padding: 1rem }
 h3 { margin: 0; font-size: 1.2rem; padding: 0 0 0 1rem }
+a { font-size: 1rem }
 p { padding: 0 1rem }
 p, ul { margin-bottom: 1.8rem }
+p img { max-width: 100%; border: 1px solid #036 }
 li { line-height: 2rem }
 li ul { margin: 0; padding-left: 0.5rem }
-a { color: #010; text-decoration: none; font-size: 1.2rem }
-a:hover { color: #060 }
+a { color: #036; text-decoration: none; font-size: 1.2rem }
+a:hover { color: #07C }
 /* index page */
 p.note { font-size: 1.2rem; max-width: 36rem; line-height: 1.6rem; margin-top: 0.5rem }
 menu.index { display: none; padding-left: 1rem }
@@ -22,8 +24,8 @@ menu.indexes li { list-style-type: none }
 menu.index a,
 menu.indexes a { display: inline-block }
 menu.indexes { padding: 0.5rem 0 0 1rem; margin: 0; }
-menu.indexes a { color: #010 }
-a.skip { display: none; font-size: 1rem; color: #010 }
+menu.indexes a { color: #036 }
+a.skip { display: none; font-size: 1rem; color: #036 }
 /* content */
 div.content { padding: 2rem; font-size: 1.2rem }
 div.content pre,
@@ -39,17 +41,26 @@ div.content p img { width: 100%; max-width: 90rem }
 div.content p code { color: #900 }
 div.content p a { text-decoration: underline }
 div.content li { line-height: 1.4rem }
-div.content pre { font-size: 1rem; display: inline-block; background-color: #DDD; border: 0.5rem solid #DDD; max-width: 100%; overflow: auto }
-div.content td pre { Background-color: transparent; border: none }
-section.full { width: 74%; margin-right: 0 }
+div.content pre { min-width: 40%; font-size: 1.2rem; display: inline-block; background-color: beige; border: 0.5rem solid beige; max-width: 100%; overflow: auto }
+div.content td pre { background-color: transparent; border: none }
+section.full { width: 66%; margin-right: 0 }
 section.side { max-width: 40rem }
 section.navigation { font-size: 1.2rem }
 section.navigation h2 { padding: 1rem 0 0 1rem }
 section.navigation li ul { padding-left: 1rem }
 section.navigation p { margin-bottom: 0; margin-right: 2rem }
-ul.screenshots { list-style-type: none; margin: 0 0 2rem 0; padding: 0; max-width: 120rem }
-ul.screenshots li { padding: 0.25rem; margin: 0 0.5rem 0.5rem 0; border: 1px solid #CCC; max-width: 24rem; text-align: center; display: inline-block }
-ul.screenshots img { width: 100% }
+.devices { margin: 0 0 2rem 0; padding: 0; list-style-type: none }
+.devices li { cursor: pointer; color: #666; display: inline-block; font-size: 1.4rem; margin-right: 1rem; margin-left: 1rem; padding: 0.5rem }
+.devices li:hover { color: #333 }
+.devices li:first-of-type { margin-left: 0 }
+.devices li:last-of-type { border-right: 0; margin-right: 0 } 
+.devices li.current { background-color: #DDD; border-radius: 0.25rem }
+ul.screenshots,
+ul.screenshots { list-style-type: none; margin: 0 0 2rem 0; padding: 0; width: 100% }
+ul.screenshots li { width: 100%; max-width: 462px; padding: 10px; margin: 0 2rem 2rem 0; vertical-align: top; text-align: center; background-color: #DDD; display: inline-block }
+ul.screenshots a { display: block; margin-bottom: 1rem; border: 1px solid #CCC }
+ul.screenshots img { width: 100%; max-width: 460px; height: auto; display: block }
+
 pre.example { max-height: 24rem; overflow: scroll; padding: 0.1rem; background-color: #DDD }
 a.home { font-weight: bold; margin: 1rem; display: inline-block }
 table { border-collapse: collapse; margin-bottom: 1rem; width: 100%; max-width: 90rem }
@@ -71,6 +82,26 @@ tr.alt td { background-color: #DDD }
 pre { margin: 0 0 2rem 2rem }
 td pre { margin: 0; overflow: auto !important }
 
+.lightbox { width: 100%; height: 100%; background-color: #DDD; position: absolute; top: 0; left: 0 }
+.lightbox img { position: absolute; left: 50%; top: 50%; border: 1px solid #FFF; background-color: #CCC; padding: 1rem }
+
+/* solarized dark theme, Original Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com> */
+pre,
+.hljs { display: block; overflow-x: auto; padding: 0.5em; background: beige; color: #444 }
+.hljs-comment, 
+.hljs-quote { color: #586e75 }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition { color: #859900 }
+.hljs-number, .hljs-string, .hljs-meta .hljs-meta-string, .hljs-literal, .hljs-doctag, .hljs-regexp { color: #2aa198 }
+.hljs-title, .hljs-section, .hljs-name, .hljs-selector-id, .hljs-selector-class { color: #268bd2 }
+.hljs-attribute, .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-class .hljs-title, .hljs-type { color: #b58900 }
+.hljs-symbol, .hljs-bullet, .hljs-subst, .hljs-meta, .hljs-meta .hljs-keyword, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-link { color: #cb4b16 }
+.hljs-built_in, .hljs-deletion { color: #dc322f }
+.hljs-formula { background: #073642 }
+.hljs-emphasis { font-style: italic }
+.hljs-strong { font-weight: bold }
+
 @media (min-width: 1920px) {
   .skip { display: none }
   div.content .skip { display: inline-block }
@@ -79,5 +110,10 @@ td pre { margin: 0; overflow: auto !important }
   section { width: 100% !important; max-width: none; min-width: none }
   menu.index,
   .skip { display: inline-block !important }
-  ul.screenshots li { width: 100%; max-width: none }
+  .content { padding: 1rem !important }
+}
+
+@media (max-width: 600px) {
+  .content { padding: 0.5rem !important }
+  .screenshots li { padding: 0 !important; margin-right: 0 !important }
 }

@@ -1,0 +1,40 @@
+const Screenshots = require('../../screenshots.js')
+
+module.exports = async (device) => {
+  const owner = await Screenshots.createUser(device, 'owner')
+  await owner.hover('Administrator')
+  await owner.click('Stripe Subscriptions module')
+  await owner.click('Create new product', true)
+  await owner.fill({
+    name: 'Unlimited',
+    unit_label: 'Unlimited',
+    statement_descriptor: 'Unlimited'
+  })
+  await owner.click('Create product', true)
+  await owner.click('Publish')
+  await owner.click('Publish product', true)
+  owner.productid = await owner.productid()
+  await owner.home()
+  await owner.hover('Administrator')
+  await owner.hover('Stripe Subscriptions module')
+  await owner.screenshot('Click "Stripe Subscriptions module"')
+  await owner.hover('Administrator')
+  await owner.click('Stripe Subscriptions module')
+  await owner.hover('Products')
+  await owner.screenshot('Click "Products"')
+  await owner.hover('Products')
+  await owner.click('Products')
+  await owner.hover(owner.productid, true)
+  await owner.screenshot('Click product to unpublish')
+  await owner.hover(owner.productid, true)
+  await owner.click(owner.productid, true)
+  await owner.hover('Unpublish')
+  await owner.screenshot('Click "Unpublish"')
+  await owner.hover('Unpublish')
+  await owner.click('Unpublish')
+  await owner.hover('Unpublish product', true)
+  await owner.screenshot('Submit form')
+  await owner.hover('Unpublish product', true)
+  await owner.click('Unpublish product', true)
+  await owner.screenshot('Success')
+}

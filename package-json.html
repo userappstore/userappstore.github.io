@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title>Dashboard package.json</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/browser.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async src="/highlight.min.js"></script>
+    <script async src="/browser.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <a name="top"></a>
+    <header>
+      <h1>Developer documentation</h1>
+      <span>How to integrate and create web apps with Dashboard</span>
+    </header>
+    <section class="side navigation">
+      <menu class="index">
+        <a class="skip" href="#content">Skip to content</a>
+      </menu>
+      <menu class="indexes">
+        <li><a href="/home.html">Developer documentation home</a></li>
+      </menu>
+      <h2>Developers</h2>
+      <ul>
+        <li><a href="/creating-dashboard-servers.html">Creating dashboard servers</a></li>
+        <li><a href="/creating-custom-content.html">Creating custom content</a></li>
+        <li><a href="/environment-variables.html">Dashboard environment variables</a></li>
+        <li><a href="/package-json.html">Dashboard package.json settings</a></li>
+        <li><a href="/content-handlers.html">Dashboard content handlers</a></li>
+        <li><a href="/request-handlers.html">Dashboard request handlers</a></li>
+        <li><a href="/scaling-dashboard-servers.html">Scaling dashboard servers</a></li>
+        <li><a href="/production-recommendations.html">Dashboard production recommendations</a></li>
+      </ul>
+      <h2>Dashboard APIs</h2>
+      <ul>
+        <li><a href="/apis/dashboard-http-api.html">Dashboard HTTP API</a> / <a href="/apis/dashboard-nodejs-api.html">NodeJS</a></li>
+        <li><a href="/apis/organizations-http-api.html">Organizations HTTP API</a> / <a href="/apis/organizations-nodejs-api.html">NodeJS</a></li>
+        <li><a href="/apis/maxmind-geoip-http-api.html">MaxMind GeoIP HTTP API</a> / <a href="/apis/maxmind-geoip-nodejs-api.html">NodeJS</a></li>
+        <li><a href="/apis/stripe-subscriptions-http-api.html">Stripe Subscriptions HTTP</a> / <a href="/apis/stripe-subscriptions-nodejs-api.html">NodeJS</a></li>
+        <li><a href="/apis/stripe-connect-http-api.html">Stripe Connect HTTP API</a> / <a href="/apis/stripe-connect-nodejs-api.html">NodeJS</a></li>
+      </ul>
+      <h2>Building with Dashboard</h2>
+      <ul>      
+        <li><a href="/creating-application-servers.html">Creating application servers</a></li>
+        <li><a href="/creating-modules-for-dashboard.html">Creating modules for Dashboard</a></li>
+        <li><a href="/creating-web-applications-with-dashboard.html">Creating web applications with Dashboard</a></li>
+        <li><a href="/integrating-with-existing-web-applications.html">Integrating Dashboard with existing web applications</a></li>
+      </ul>
+      <h2>Integration walkthroughs</h2>
+      <ul>
+        <li><a href="/integrations/converting-hastebin-free-saas.html">Making Hastebin a free SaaS</a></li>
+        <li><a href="/integrations/converting-hastebin-subscription-saas.html">Making Hastebin a subscription SaaS</a></li>
+      </ul>
+      <h2>Github repositories</h2>
+      <ul>
+        <li><a href="https://github.com/userdashboard/dashboard">userdashboard/dashboard</a></li>
+        <li><a href="https://github.com/userdashboard/organizations">userdashboard/organizations</a></li>
+        <li><a href="https://github.com/userdashboard/stripe-connect">userdashboard/stripe-connect</a></li>
+        <li><a href="https://github.com/userdashboard/stripe-subscriptions">userdashboard/stripe-subscriptions</a></li>
+        <li><a href="https://github.com/userdashboard/maxmind-geoip">userdashboard/maxmind-geoip</a></li>
+        <li><a href="https://github.com/userdashboard/storage-redis">userdashboard/storage-redis</a></li>
+        <li><a href="https://github.com/userdashboard/storage-postgresql">userdashboard/storage-postgresql</a></li>
+        <li><a href="https://github.com/userdashboard/stripe-s3">userdashboard/storage-s3</a></li>
+        <li><a href="https://github.com/userdashboard/storage-cache-redis">userdashboard/storage-cache-redis</a></li>
+      </ul>
+      <h2>NPM packages</h2>
+      <ul>
+        <li><a href="https://npmjs.com/package/@userdashboard/dashboard">@userdashboard/dashboard</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/organizations">@userdashboard/organizations</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/stripe-connect">@userdashboard/stripe-connect</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/stripe-connect">@userdashboard/stripe-connect</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/maxmind-geoip">@userdashboard/maxmind-geoip</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/storage-s3">@userdashboard/storage-s3</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/storage-redis">@userdashboard/storage-redis</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/storage-postgresql">@userdashboard/storage-postgresql</a></li>
+        <li><a href="https://npmjs.com/package/@userdashboard/storage-cache-redis">@userdashboard/storage-cache-redis</a></li>
+      </ul>
+    </section>
+    <section class="full">
+      <a name="content"></a>
+      <div class="content">
+        <h1>Dashboard package.json</h1>
+        <p>Dashboard receives some configuration from merging its <code>package.json</code> with any modules and then finally your root <code>package.json</code> in that order.</code>.</p>
+        <p>Your Dashboard server begins with a blank NodeJS project:</p>
+        <pre><code data-language="bash">$ mkdir project
+$ cd project
+$ npm init
+$ npm install @userdashboard/dashboard</code></pre>
+<p>After running <code>npm init</code> a <code>package.json</code> will be created in your project folder.  Some Dashboard settings can be specified inside that <code>package.json</code>:</p>
+        <ul>
+          <li>title will appear in the <code>template.html</code> header</li>
+          <li>additional links for the account or administrator menus</li>
+          <li><a href="/request-handlers.html">server request handlers</a> to work with HTTP requests</li>
+          <li><a href="/content-handlers.html">HTML content handlers</a> to work with content served to users</li>
+        </ul>
+        <pre><code data-language="json">"dashboard": {
+  "modules": [
+    "@userdashboard/stripe-subcriptions"
+  ],
+  "content": [
+    "/src/modify-page-or-template-content.js"
+  ],
+  "server": [
+    "/src/modify-requests-prior-to-completion.js"
+  ],
+  "menus": {
+    "account": [
+      {
+        "href": "/account",
+        "text": "My account",
+        "object": "link"
+      },
+      {
+        "href": "/account/signout",
+        "text": "Sign out",
+        "object": "link"
+      }
+    ],
+    "administrator": [
+      {
+        "href": "/administrator",
+        "text": "Dashboard administration",
+        "object": "link"
+      }
+    ]
+  }
+}</code></pre>
+        <p><a class="skip" href="#top">Top of page</a></p>
+      </div>
+    </section>
+  </body>
+</html>

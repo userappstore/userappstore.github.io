@@ -1,0 +1,14 @@
+const Screenshots = require('../screenshots.js')
+
+module.exports = async (device) => {
+  if (device.name !== 'iPad Pro') {
+    return
+  }
+  const heightWas = device.viewport.height
+  device.viewport.height = Math.floor(device.viewport.height / 2)
+  await Screenshots.createUser(device, 'owner')
+  const user = await Screenshots.createUser(device, 'user')
+  await user.hover('Account')
+  await user.tab.screenshot({ path: `${__dirname}/home.png`})
+  device.viewport.height = heightWas
+}

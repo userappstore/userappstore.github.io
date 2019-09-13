@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Accepting refund requests</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/browser.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/wa-mediabox.min.css">
+    <script async src="/wa-mediabox.min.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <a name="top"></a>
+    <header>
+      <h1>Administrator documentation</h1>
+      <span>How to manage your application users</span>
+    </header>
+    <section class="side navigation">
+      <menu class="index">
+        <a class="skip" href="#content">Skip to content</a>
+      </menu>
+      <menu class="indexes">
+        <li><a href="/administrators/home.html">Administrator documentation home</a></li>
+      </menu>
+      <h2>Stripe subscriptions</h2>
+      <ul>
+        <li><a href="/administrators/stripe-subscriptions/viewing-subscriptions.html">Viewing subscriptions</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-at-period-end.html">Deleting subscription at end of billing period</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-with-credit.html">Deleting subscription with credit</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-subscription-with-refund.html">Deleting subscription with refund</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-customers.html">Viewing customers</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-credits.html">Viewing credits</a></li>
+        <li><a href="/administrators/stripe-subscriptions/assigning-credits.html">Assigning credit</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-invoices.html">Viewing invoices</a></li>
+        <li><a href="/administrators/stripe-subscriptions/refunding-invoices.html">Refunding invoices</a></li>
+        <li><a href="/administrators/stripe-subscriptions/forgiving-invoices.html">Forgiving invoices</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-charges.html">Viewing charges</a></li>
+        <li><a href="/administrators/stripe-subscriptions/flagging-fraudulent-charges.html">Flagging fraudulent charges</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-refunds.html">Viewing refunds</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-refund-requests.html">Viewing refund requests</a></li>
+        <li><a href="/administrators/stripe-subscriptions/accepting-refund-requests.html">Accepting refund requests</a></li>
+        <li><a href="/administrators/stripe-subscriptions/denying-refund-requests.html">Denying refund requests</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-products.html">Viewing products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/creating-products.html">Creating products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/publishing-products.html">Publishing products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/unpublishing-products.html">Unpublishing products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/updating-products.html">Updating products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-products.html">Deleting products</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-plans.html">Viewing plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/creating-plans.html">Creating plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/publishing-plans.html">Publishing plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/unpublishing-plans.html">Unpublishing plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/updating-plans.html">Updating plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-plans.html">Deleting plans</a></li>
+        <li><a href="/administrators/stripe-subscriptions/viewing-coupons.html">Viewing coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/creating-coupons.html">Creating coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/publishing-coupons.html">Publishing coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/unpublishing-coupons.html">Unpublishing coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/updating-coupons.html">Updating coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/applying-coupons-to-customers.html">Applying coupons to customers</a></li>
+        <li><a href="/administrators/stripe-subscriptions/applying-coupons-to-subscriptions.html">Applying coupons to subscriptions</a></li>
+        <li><a href="/administrators/stripe-subscriptions/revoking-customer-coupon.html">Revoking customer coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/revoking-subscription-coupon.html">Revoking subscription coupons</a></li>
+        <li><a href="/administrators/stripe-subscriptions/deleting-coupons.html">Deleting coupons</a></li>
+      </ul>
+    </section>
+    <section class="full">
+      <a name="content"></a>
+      <div class="content">
+        <h1>How to accept refund requests</h1>
+        <p>Users may request invoices be refunded outside if there is no self-refunding period or outside of it.</p>
+        <ul class="screenshots desktop">
+          <li>
+            <a href="./accept-refund-requests/1-click-stripe-subscriptions-module.png?raw=true" data-mediabox="accept-refund-requests" data-title="1.  Click 'Stripe Subscriptions module''">
+              <img title="Click 'Stripe Subscriptions module'" src="./accept-refund-requests/1-click-stripe-subscriptions-module.png?raw=true" />
+            </a>
+            1.  Click "Stripe Subscriptions module"
+          </li>
+          <li>
+            <a href="./accept-refund-requests/2-click-refund-requests.png?raw=true" data-mediabox="accept-refund-requests" data-title="2.  Click 'Refund requests''">
+              <img title="Click 'Refund requests'" src="./accept-refund-requests/2-click-refund-requests.png?raw=true" />
+            </a>
+            2.  Click "Refund requests"
+          </li>
+          <li>
+            <a href="./accept-refund-requests/3-click-charge-to-refund.png?raw=true" data-mediabox="accept-refund-requests" data-title="3.  Click charge to refund'">
+              <img title="Click charge to refund" src="./accept-refund-requests/3-click-charge-to-refund.png?raw=true" />
+            </a>
+            3.  Click charge to refund
+          </li>
+          <li>
+            <a href="./accept-refund-requests/4-click-refund.png?raw=true" data-mediabox="accept-refund-requests" data-title="4.  Click 'Refund''">
+              <img title="Click 'Refund'" src="./accept-refund-requests/4-click-refund.png?raw=true" />
+            </a>
+            4.  Click "Refund"
+          </li>
+          <li>
+            <a href="./accept-refund-requests/5-enter-amount-and-submit-form.png?raw=true" data-mediabox="accept-refund-requests" data-title="5.  Enter amount and submit form'">
+              <img title="Enter amount and submit form" src="./accept-refund-requests/5-enter-amount-and-submit-form.png?raw=true" />
+            </a>
+            5.  Enter amount and submit form
+          </li>
+          <li>
+            <a href="./accept-refund-requests/6-success.png?raw=true" data-mediabox="accept-refund-requests" data-title="6.  Success'">
+              <img title="Success" src="./accept-refund-requests/6-success.png?raw=true" />
+            </a>
+            6.  Success
+          </li>
+        </ul>
+        <p><a class="skip" href="#top">Top of page</a></p>
+      </div>
+    </section>
+  </body>
+</html>

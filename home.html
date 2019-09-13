@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>About UserAppStore</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/browser.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <a name="top"></a>
+    <header>
+      <h1>App store documentation</h1>
+      <span>How to use, administrate and build on web app stores</span>
+    </header>
+    <section class="side navigation">
+      <menu class="index">
+        <a class="skip" href="#content">Skip to content</a>
+      </menu>
+      <menu class="indexes">
+        <li><a href="/sitemap">Documentation index</a></li>
+      </menu>
+      <h2>Documentation</h2>
+      <ul>
+        <li><a href="/creating-dashboard-servers">Creating dashboard servers</a></li>
+      </ul>
+      <h2>Dashboard APIs</h2>
+      <ul>
+        <li><a href="/apis/app-store-http-api.html">HTTP API</a> / <a href="/apis/app-store-nodejs-api.html">NodeJS</a></li>
+      </ul>
+      <h2>Github repositories</h2>
+      <ul>
+        <li><a href="https://github.com/userappstore/app-store-application-server">userappstore/app-store-application-server</a></li>
+        <li><a href="https://github.com/userappstore/app-store-dashboard-server">userappstore/app-store-dashboard-server</a></li>
+      </ul>
+      <h2>NPM packages</h2>
+      <ul>
+        <li><a href="https://npmjs.com/package/@userappstore/app-store-application-server">@userappstore/app-store-application-server</a></li>
+        <li><a href="https://npmjs.com/package/@userappstore/app-store-dashboard-server">@userappstore/app-store-dashboard-server</a></li>
+      </ul>
+    </section>
+    <section class="full">
+      <a name="content"></a>
+      <div class="content">
+        <h1>About Dashboard</h1>
+        <p>Writing a web application typically includes writing a way to create accounts and manage account data and eventually ways to administrate that data too.  Dashboard provides a reusable UI for your users and administration, completely API-driven, that installs alongside your web application so you have two servers, one for your Dashboard and one for your application.</p>
+        <p><img title="Dashboard, module and application servers" src="./1-dashboard-structure.png?raw=true" /></p>
+        <p>As users browse your Dashboard server they receive content proxied from your application server and content provided by Dashboard and its modules.</p>
+        <p><img title="How Dashboard requests are processed" src="./2-dashboard-requests.png?raw=true" /></p>
+        <p>Dashboard serves your application within its own template, or your app may occupy the entire page.</p>
+        <p><img title="Dashboard with proxied application content" src="./integrations/convert-hastebin-free-saas/7-creating-post-shared-with-organization_ipad-pro.png?raw=true" /></p>
+        <p>Dashboard is written in <a href="https://nodejs.org">NodeJS</a> and uses local file system, <a href="https://www.postgresql.org/">PostGreSQL</a>, <a href="https://redis.io">Redis</a>, or <a href="https://s3.amazonaws.com">Amazon S3-compatible</a> backends for data storage.  The project code is divided into three groups:</p>
+        <ol>
+          <li><code>Web UI</code> provides an interface for users and administrators powered by the <code>Private API</code></li>
+          <li><code>Private API</code> provides user- and administrator-access to data and changing data</li>
+          <li><code>Internal API</code> provides helpers and an interface for storage and caching</li>
+        </ol>
+        <h2>Web UI</h2>
+        <p>These HTML pages are paired with a NodeJS handler that responds to HTTP requests on GET and POST requests. The user and administrator Web UI are both formed out of these pages.  Each route in the <code>Web UI</code> can be made from an <code>HTML page</code> and optionally a <code>NodeJS handler</code>.</p>
+        <pre><code data-language="text">URL:            /account/change-username
+HTML:   /src/www/account/change-username.html
+NodeJS: /src/www/account/change-username.js</code></pre>
+        <p>HTML pages can be served static (without the extension) by not pairing a NodeJS file.  The NodeJS file may expose a method for each HTTP method and a <code>before</code> method that will run prior to anything.  POST data will be previously bound to the request object as <code>req.body</code>.  QueryString data will be <code>req.query</code>.  File uploads will be bound to <code>req.uploads</code>.</p>
+        <pre><code data-language="kf">{
+  before: async (req),
+  get: async (req, res),
+  post: async (req, res),
+  patch: async (req, res),
+  put: async (req, res),
+  delete: async (req, res)
+}</code></pre>
+        <h2>Private API</h2>
+        <p>The private API is acccessible to your application server, dashboard modules and code running on your dashboard server. The API composes operations out of the <code>Internal API</code> and other parts of the <code>Private API</code> for user and administrator operations.</p>
+        <p>The <code>Private API</code> can be exposed to HTTP requests by client-side JavaScript and user's web browser extensions. These requests are authenticated by the web browser cookie created when signing in, the same as when a user is opening pages in their browser.</p>
+        <pre><code data-language="js">process.env.ALLOW_PUBLIC_API = true</code></pre>
+        <p>The <code>Private API</code> is accessible via a NodeJS global object that receives a HTTPClient request object or similar and returns data or performs operations.</p>
+        <pre><code data-language="js">const req = {
+  body: {
+    username: 'my-username',
+    password: 'a-password'
+  }
+}
+const account = await global.api.user.CreateAccount.post(req)</code></pre>
+          <p>Your application server may proxy the HTTP endpoints:</p>
+<pre><code data-language="js">const headers = {
+  "x-application-server": "address",
+  "x-dashboard-server": "dashboard address",
+  "x-accountid": "xxx",
+  "x-sessionid": "yyy",
+  "x-dashboard-token": bcrypt(`${APPLICATION_SERVER_TOKEN}/${accountid}/${sessionid}`, randomSalt)
+}
+const body = {
+  username: 'my-username',
+  password: 'a-password'
+}
+const account = await proxy.post('/api/user/create-account', headers, body)</code></pre>
+        <h2>Internal API</h2>
+        <p>These are only accessible to code on the Dashboard server. They provide the basic database operations for storage, caching, and request processing.</p>
+        <pre><code data-language="js">const dashboard = require('@userappstore/dashboard')
+const thing = await dashboard.Storage.write('thing', 'contents')</code></pre>
+        <p>Multiple storage backends are supported officially for Dashboard.  You can add support for any other database or system by replicating the interface's basic read, write and listing operations.</p>
+        <p>Data can be cached to avoid reloading database operations.  It will automatically re-set data when it is modified.  By default the caching can be done in local memory or Redis.  Using local memory should only be done when you have a single dashboard server instance.</p>
+      </div>
+      <p><a class="skip" href="#top">Top of page</a></p>
+    </section>
+  </body>
+</html>
+
